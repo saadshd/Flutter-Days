@@ -6,6 +6,10 @@ import 'containerfile.dart';
 const activeColor = Color(0xFF1D1E33);
 const deactiveColor = Color(0xFF111328);
 
+enum Gender{
+  male,
+  female,
+}
 
 
 class InputPage extends StatefulWidget {
@@ -16,12 +20,12 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Color maleColor = deactiveColor;
   Color femaleColor = deactiveColor;
-  void updateColor(int gender){
-    if(gender == 1){
+  void updateColor(Gender gendertype){
+    if(gendertype == Gender.male){
       maleColor = activeColor;
       femaleColor = deactiveColor;
     }
-    if(gender == 2){
+    if(gendertype == Gender.female){
       maleColor = deactiveColor;
       femaleColor = activeColor;
     }
@@ -43,7 +47,7 @@ class _InputPageState extends State<InputPage> {
                       onTap: ()
                       {
                         setState(() {
-                          updateColor(1);
+                          updateColor(Gender.male);
                         });
                       },
                       child: RepeatContainerCode(
@@ -60,7 +64,7 @@ class _InputPageState extends State<InputPage> {
                     onTap: ()
                     {
                       setState(() {
-                        updateColor(2);
+                        updateColor(Gender.female);
                       });
                     },
                     child: RepeatContainerCode(
@@ -78,28 +82,28 @@ class _InputPageState extends State<InputPage> {
 
 
 
-        Expanded(
-          child: RepeatContainerCode(
-            colors: Color(0xFF1D1E33),
-          ),
-        ),
+        // Expanded(
+        //   child: RepeatContainerCode(
+        //     colors: Color(0xFF1D1E33),
+        //   ),
+        // ),
 
-        Expanded(
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: RepeatContainerCode(
-                    colors: Color(0xFF1D1E33),
-                  ),
-                ),
-                Expanded(
-                  child: RepeatContainerCode(
-                    colors: Color(0xFF1D1E33),
-                  ),
-                ),
-              ],
-            )
-        ),
+        // Expanded(
+        //     child: Row(
+        //       children: <Widget>[
+        //         Expanded(
+        //           child: RepeatContainerCode(
+        //             colors: Color(0xFF1D1E33),
+        //           ),
+        //         ),
+        //         Expanded(
+        //           child: RepeatContainerCode(
+        //             colors: Color(0xFF1D1E33),
+        //           ),
+        //         ),
+        //       ],
+        //     )
+        // ),
 
       ],
       ),
