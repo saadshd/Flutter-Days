@@ -17,3 +17,24 @@ const klargenumberstyle = TextStyle(
   fontSize: 15.0,
   fontWeight: FontWeight.bold,
 );
+
+const kTitleStyleS2 = TextStyle(
+  fontSize: 50.0,
+  fontWeight: FontWeight.bold,
+);
+
+const kResultText = TextStyle(
+  fontSize: 15.0,
+  color: Color(0xFFEB1555),
+  fontWeight: FontWeight.bold,
+);
+
+const kBMITextstyle = TextStyle(
+  fontSize: 70.0,
+  fontWeight: FontWeight.bold,
+);
+
+const kbodyTextstyle = TextStyle(
+  fontSize: 15.0,
+);
+
