@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class RepeatContainerCode extends StatelessWidget {
-  RepeatContainerCode({required this.colors, required this.carwidget});
+  RepeatContainerCode({required this.colors,  this.carwidget});
   final Color colors;
-  final Widget carwidget;
+  final Widget? carwidget;
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -9,6 +9,7 @@ const deactiveColor = Color(0xFF111328);
 enum Gender{
   male,
   female,
+  h,
 }
 
 
@@ -18,18 +19,7 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleColor = deactiveColor;
-  Color femaleColor = deactiveColor;
-  void updateColor(Gender gendertype){
-    if(gendertype == Gender.male){
-      maleColor = activeColor;
-      femaleColor = deactiveColor;
-    }
-    if(gendertype == Gender.female){
-      maleColor = deactiveColor;
-      femaleColor = activeColor;
-    }
-  }
+  Gender selectGender = Gender.h;
 
   @override
   Widget build(BuildContext context) {
@@ -47,11 +37,11 @@ class _InputPageState extends State<InputPage> {
                       onTap: ()
                       {
                         setState(() {
-                          updateColor(Gender.male);
+                          selectGender=Gender.male;
                         });
                       },
                       child: RepeatContainerCode(
-                        colors: maleColor,
+                        colors: selectGender==Gender.male?activeColor:deactiveColor,
                         carwidget: RepeatCardWidget(
                           iconData: FontAwesomeIcons.male,
                           label: 'MALE',
@@ -64,11 +54,11 @@ class _InputPageState extends State<InputPage> {
                     onTap: ()
                     {
                       setState(() {
-                        updateColor(Gender.female);
+                        selectGender=Gender.female;
                       });
                     },
                     child: RepeatContainerCode(
-                      colors: femaleColor,
+                      colors: selectGender==Gender.female?activeColor:deactiveColor,
                       carwidget: RepeatCardWidget(
                         iconData: FontAwesomeIcons.female,
                         label: 'FEMALE',
@@ -82,32 +72,33 @@ class _InputPageState extends State<InputPage> {
 
 
 
-        // Expanded(
-        //   child: RepeatContainerCode(
-        //     colors: Color(0xFF1D1E33),
-        //   ),
-        // ),
+        Expanded(
+          child: RepeatContainerCode(
+            colors: Color(0xFF1D1E33),
+          ),
+        ),
 
-        // Expanded(
-        //     child: Row(
-        //       children: <Widget>[
-        //         Expanded(
-        //           child: RepeatContainerCode(
-        //             colors: Color(0xFF1D1E33),
-        //           ),
-        //         ),
-        //         Expanded(
-        //           child: RepeatContainerCode(
-        //             colors: Color(0xFF1D1E33),
-        //           ),
-        //         ),
-        //       ],
-        //     )
-        // ),
+        Expanded(
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: RepeatContainerCode(
+                    colors: Color(0xFF1D1E33),
+                  ),
+                ),
+                Expanded(
+                  child: RepeatContainerCode(
+                    colors: Color(0xFF1D1E33),
+                  ),
+                ),
+              ],
+            )
+        ),
 
       ],
       ),
 
     );
   }
+
 }
