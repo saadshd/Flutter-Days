@@ -19,7 +19,7 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender selectGender = Gender.h;
   int sliderheight=180;
-
+  int sliderweight=60;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,6 +110,23 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: RepeatContainerCode(
                     colors: Color(0xFF1D1E33),
+                    carwidget: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('WEIGHT',
+                          style: klabelstyle,
+                        ),
+                        Text(sliderweight.toString(),
+                          style: knumberstyle,
+                        )
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
