@@ -18,6 +18,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectGender = Gender.h;
+  int sliderheight=180;
 
   @override
   Widget build(BuildContext context) {
@@ -71,8 +72,32 @@ class _InputPageState extends State<InputPage> {
           child: RepeatContainerCode(
             colors: Color(0xFF1D1E33),
             carwidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text('HIEGHT', style: klabelstyle,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(sliderheight.toString(),
+                      style: knumberstyle,
+                    ),
+                    Text('cm',
+                    style: klabelstyle,
+                    ),
+                  ],
+                ),
+                Slider(
+                  value: sliderheight.toDouble(),
+                  min: 120.0,
+                  max: 220.0,
+                  activeColor: Color(0xFFEb1555),
+                  inactiveColor: Color(0xFF8D8E98),
+                  onChanged: (double newValue) {
+                    setState(() {
+                      sliderheight = newValue.round();
+                    });
+                  },
                 ),
               ],
             ),
