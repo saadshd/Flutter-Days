@@ -14,7 +14,7 @@ class RepeatCardWidget extends StatelessWidget {
       children: [
         Icon(
           iconData,
-          size: 85.0,
+          size: 75.0,
         ),
         SizedBox(
           height: 15.0,
