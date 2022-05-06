@@ -59,6 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                    color: const Color(0xFFF6F6F6),
                    borderRadius: BorderRadius.circular(15),
                   ),
+
                   margin: EdgeInsets.all(15),
                   padding: const EdgeInsets.fromLTRB(0,25,0,0),
                   child:
@@ -135,6 +136,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       label: Text('Back'),
                     ),
                   ),
+
+
+
                   SizedBox.fromSize(
                     size: Size(100,40),
                     child: ElevatedButton.icon(
