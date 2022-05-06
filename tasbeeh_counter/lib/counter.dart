@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'drawer.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -24,17 +25,38 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Tasbeeh Counter"),
+        backgroundColor: Color(0xFF2F2F2F),
+        elevation: 0,
+
       ),
       drawer: MyDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Alhamdullilah\n",
+                        style: Theme.of(context).textTheme.subtitle1,
+                      ),
+                      Text("Set 1",
+                        style: Theme.of(context).textTheme.subtitle2,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
             Container(
                   height: 300,
                   width: 250,
                   decoration: BoxDecoration(
-                   color: const Color(0xFFFFCB74),
+                   color: const Color(0xFFF6F6F6),
                    borderRadius: BorderRadius.circular(15),
                   ),
                   margin: EdgeInsets.all(15),
@@ -50,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             style: Theme.of(context).textTheme.headline4,
                           ),
                           Padding(
-                            padding: const EdgeInsets.fromLTRB(0,25,0,0),
+                            padding: const EdgeInsets.fromLTRB(0,35,0,0),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -60,14 +82,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                   height: 150,
                                   child: ElevatedButton(onPressed: _incrementCounter,
                                       child: const Icon(Icons.add,
-                                      size: 30,
-                                      color: Colors.white),
+                                      size: 40),
                                       style: ElevatedButton.styleFrom(
                                           elevation: 20,
                                           shape: RoundedRectangleBorder(
                                               borderRadius: BorderRadius.circular(100)
                                           ),
-                                          padding: EdgeInsets.all(20),
+
 
                                       )
                                   ),
@@ -77,8 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   height: 56,
                                   child: ElevatedButton(onPressed: _incrementCounter,
                                       child: const Icon(Icons.refresh,
-                                          size: 40,
-                                          color: Colors.white),
+                                          size: 30),
                                       style: ElevatedButton.styleFrom(
                                         elevation: 20,
                                         shape: RoundedRectangleBorder(
@@ -94,6 +114,48 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
 
                 ),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox.fromSize(
+                    size: Size(100,40),
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        elevation: 5,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)
+                        ),
+                      ),
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.arrow_back_sharp,
+                        size: 24.0,
+                      ),
+                      label: Text('Back'),
+                    ),
+                  ),
+                  SizedBox.fromSize(
+                    size: Size(100,40),
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        elevation: 5,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)
+                        ),
+                      ),
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.file_download_outlined,
+                        size: 24.0,
+                      ),
+                      label: Text('Save'), // <-- Text
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
           ],
         ),
       ),
@@ -101,96 +163,3 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class MyDrawer extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          UserAccountsDrawerHeader(
-            accountName: Text("M. Saad Shahid"),
-            accountEmail: Text("saadrajput831@gmail.com"),
-            currentAccountPicture: CircleAvatar(
-              backgroundColor: Colors.white,
-              child: Text(
-                "S",
-                style: TextStyle(fontSize: 40.0),
-              ),
-            ),
-          ),
-          ListTile(
-            leading:
-            Icon(Icons.home),
-            title: const Text('Home'),
-
-
-            // onTap: () {
-            //   Navigator.push(
-            //     context,
-            //     PageTransition(
-            //       type: PageTransitionType.leftToRightWithFade,
-            //       child: Home(),
-            //     ),
-            //   );
-            // },
-          ),
-          ListTile(
-            leading:
-            Icon(Icons.account_circle_rounded),
-            title: const Text('My Profile',
-              style: TextStyle(
-                color: Colors.blue,
-              ) ,
-            ),
-            // onTap: () {
-            //   Navigator.push(
-            //     context,
-            //     PageTransition(
-            //       type: PageTransitionType.leftToRightWithFade,
-            //       child: Profile(),
-            //     ),
-            //   );
-            // },
-          ),
-          ListTile(
-            leading:
-            Icon(Icons.settings),
-            title: const Text('Setting',
-              style: TextStyle(
-                color: Colors.blue,
-              ) ,
-            ),
-            // onTap: () {
-            //   Navigator.push(
-            //     context,
-            //     PageTransition(
-            //       type: PageTransitionType.leftToRightWithFade,
-            //       child: Setting(),
-            //     ),
-            //   );
-            // },
-          ),
-          ListTile(
-            leading:
-            Icon(Icons.contacts),
-            title: const Text('Contact Us',
-              style: TextStyle(
-                color: Colors.blue,
-              ) ,
-            ),
-            // onTap: () {
-            //   Navigator.push(
-            //     context,
-            //     PageTransition(
-            //       type: PageTransitionType.leftToRightWithFade,
-            //       child: Contact(),
-            //     ),
-            //   );             },
-          ),
-
-        ],
-      ),
-    );
-  }
-}
