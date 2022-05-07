@@ -26,7 +26,7 @@ class MyDrawer extends StatelessWidget {
                       left: 16.0,
                       child: Text("Tasbeeh Counter",
                           style: TextStyle(
-                              color: Colors.black,
+                              color: Colors.white,
                               fontSize: 20.0,
                               fontWeight: FontWeight.w500)
                       )

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tasbeeh_counter/counter.dart';
 import 'drawer.dart';
+import 'newtasbeeh.dart';
 
 class home extends StatelessWidget {
 
@@ -20,23 +21,13 @@ class home extends StatelessWidget {
         children: [
           Column(
             children: [
-                CircleAvatar(
-                  radius: 55,
-                  backgroundColor: Colors.white,
-          child: Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      boxShadow: [BoxShadow(blurRadius: 10, color: Colors.white, spreadRadius: 7)],
-                    ),
-                    child: CircleAvatar(
+              CircleAvatar(
                       radius: 50,
-                      backgroundImage: AssetImage('images/tasbih.jpeg'),
+                      backgroundColor: Color(0xFF2F2F2F),
+                      backgroundImage: AssetImage('images/little.png'),
                     ),
-                  ),
-                ),
-
               Text(
-                '\nTasbeeh Counter',
+                'Tasbeeh Counter',
                 style: Theme.of(context).textTheme.headline6,
               ),
             ],
@@ -51,7 +42,13 @@ class home extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10)
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return myalertbox();
+                    });
+              },
                child: Text('Create Tasbeeh'),
             ),
           ),

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 //import 'package:splashscreen/splashscreen.dart';
 import 'counter.dart';
 import 'home.dart';
+import 'newtasbeeh.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
             headline5: TextStyle(color: Colors.black),
         ),
       ),
-      home: home(),
+      home: splashscreen(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -49,7 +50,7 @@ class _splashscreenState extends State<splashscreen> {
   @override
   void initState() {
     super.initState ();
-    Timer(const Duration(seconds: 3),
+    Timer(const Duration(seconds: 5),
             ()=>Navigator.pushReplacement(context,
                 MaterialPageRoute(builder: (context) => home())));
   }
