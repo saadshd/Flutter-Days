@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'drawer.dart';
+import 'home.dart';
+import 'package:page_transition/page_transition.dart';
+
 
 class CounterPage extends StatefulWidget {
   const CounterPage({Key? key}) : super(key: key);
@@ -128,7 +131,9 @@ class _CounterPageState extends State<CounterPage> {
                             borderRadius: BorderRadius.circular(10)
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       icon: Icon(
                         Icons.arrow_back_sharp,
                         size: 24.0,

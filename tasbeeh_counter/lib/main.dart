@@ -20,13 +20,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Tasbeeh Counter',
       theme: ThemeData(
-        colorScheme: const ColorScheme.dark(
+        colorScheme: ColorScheme.dark(
           primary: Color(0xFFFFCB74),
-        ).copyWith(
-          secondary: const Color(0xFF2F2F2F),
+          secondary: Color(0xFF2F2F2F),
         ),
-        scaffoldBackgroundColor: Color(0xFF2F2F2F),
-        textTheme: const TextTheme(
+        //scaffoldBackgroundColor: Color(0xFF2F2F2F),
+        textTheme: TextTheme(
             bodyText2: TextStyle(color: Colors.black),
             headline4: TextStyle(color: Colors.black),
             headline5: TextStyle(color: Colors.black),

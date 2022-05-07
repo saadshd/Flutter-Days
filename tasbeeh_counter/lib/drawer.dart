@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tasbeeh_counter/home.dart';
+import 'package:page_transition/page_transition.dart';
 
 class MyDrawer extends StatelessWidget {
   @override
@@ -38,17 +40,15 @@ class MyDrawer extends StatelessWidget {
               leading:
               Icon(Icons.home),
               title: const Text('Home'),
-
-
-              // onTap: () {
-              //   Navigator.push(
-              //     context,
-              //     PageTransition(
-              //       type: PageTransitionType.leftToRightWithFade,
-              //       child: Home(),
-              //     ),
-              //   );
-              // },
+              onTap: () {
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    child: home(),
+                  ),
+                );
+              },
             ),
             ListTile(
               leading:
@@ -56,14 +56,15 @@ class MyDrawer extends StatelessWidget {
               title: const Text('Contact Us',
 
               ),
-              // onTap: () {
-              //   Navigator.push(
-              //     context,
-              //     PageTransition(
-              //       type: PageTransitionType.leftToRightWithFade,
-              //       child: Contact(),
-              //     ),
-              //   );             },
+              onTap: () {
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    child: home(),
+                  ),
+                );
+                },
             ),
 
           ],

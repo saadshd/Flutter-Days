@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:tasbeeh_counter/viewall.dart';
 import 'package:tasbeeh_counter/counter.dart';
 import 'drawer.dart';
 import 'newtasbeeh.dart';
+import 'viewall.dart';
+import 'package:page_transition/page_transition.dart';
+
 
 class home extends StatelessWidget {
-
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +15,6 @@ class home extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xFF2F2F2F),
         elevation: 0,
-
       ),
       drawer: MyDrawer(),
       body: Center(
@@ -68,7 +70,7 @@ class home extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => const CounterPage()),
                 );
               },
-              child: Text('Counter Tasbeeh'),
+              child: Text('Tasbeeh Counter'),
             ),
           ),
 
@@ -82,7 +84,13 @@ class home extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    child: viewall(),
+                  ),
+                );
               },
               child: Text('View All Tasbeeh'),
             ),
