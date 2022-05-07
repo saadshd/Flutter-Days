@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'drawer.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class CounterPage extends StatefulWidget {
+  const CounterPage({Key? key}) : super(key: key);
 
 
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<CounterPage> createState() => _CounterPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _CounterPageState extends State<CounterPage> {
   int _counter = 0;
 
   void _incrementCounter() {

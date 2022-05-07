@@ -11,9 +11,15 @@ class MyDrawer extends StatelessWidget {
             DrawerHeader(
                 margin: EdgeInsets.zero,
                 padding: EdgeInsets.zero,
-              decoration: BoxDecoration(
-                color: Color(0xFFFFCB74),
-              ),
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("images/bg.jpeg"),
+                      fit: BoxFit.fill,
+                  alignment: Alignment.center),
+                ),
+              // decoration: BoxDecoration(
+              //   color: Color(0xFFFFCB74),
+              // ),
                 child: Stack(children: <Widget>[
                   Positioned(
                       bottom: 12.0,
