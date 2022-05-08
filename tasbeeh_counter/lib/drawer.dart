@@ -19,9 +19,6 @@ class MyDrawer extends StatelessWidget {
                       fit: BoxFit.fill,
                   alignment: Alignment.center),
                 ),
-              // decoration: BoxDecoration(
-              //   color: Color(0xFFFFCB74),
-              // ),
                 child: Stack(children: <Widget>[
                   Positioned(
                       bottom: 12.0,

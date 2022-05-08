@@ -10,6 +10,7 @@ class _myalertboxState extends State<myalertbox> {
   @override
   Widget build(BuildContext context) {
                   return AlertDialog(
+
                     title: Container(
                       height: 50,
                       decoration: BoxDecoration(
@@ -36,7 +37,7 @@ class _myalertboxState extends State<myalertbox> {
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
                               SizedBox.fromSize(
-                                size: Size(20,20),
+                                size: Size(10,10),
                               ),
 
                               Padding(
@@ -57,34 +58,35 @@ class _myalertboxState extends State<myalertbox> {
                               ),
 
                               SizedBox.fromSize(
-                                size: Size(20,20),
+                                size: Size(10,10),
                               ),
 
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
 
-                                  Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: TextButton(
-                                      child: Text("Save"),
-                                      onPressed: () {
 
-                                      },
-                                    ),
-                                  ),
                                   Padding(
                                     padding: const EdgeInsets.all(10.0),
                                     child: TextButton(
-                                      child: Text("Cancel"),
+                                      child: Text('Cancel',
+
+                                      ),
                                       onPressed: () {
                                         Navigator.pop(context);
                                       },
                                     ),
                                   ),
 
+                                  Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: TextButton(
+                                      child: Text('Save'),
+                                      onPressed: () {
 
-
+                                      },
+                                    ),
+                                  ),
                                 ],
                               ),
                             ],

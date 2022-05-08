@@ -1,10 +1,8 @@
 import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-//import 'package:splashscreen/splashscreen.dart';
-import 'counter.dart';
 import 'home.dart';
-import 'newtasbeeh.dart';
+
 
 void main() {
   runApp(const MyApp());

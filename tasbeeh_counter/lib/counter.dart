@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'drawer.dart';
-import 'home.dart';
-import 'package:page_transition/page_transition.dart';
-
+import 'newtasbeeh.dart';
 
 class CounterPage extends StatefulWidget {
   const CounterPage({Key? key}) : super(key: key);
@@ -28,9 +26,26 @@ class _CounterPageState extends State<CounterPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Tasbeeh Counter"),
+        centerTitle: true,
         backgroundColor: Color(0xFF2F2F2F),
         elevation: 0,
-
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.add,
+            ),
+            color:Colors.white,
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return myalertbox();
+                  });
+            },
+          ),
+        ],
       ),
       drawer: MyDrawer(),
       body: Center(

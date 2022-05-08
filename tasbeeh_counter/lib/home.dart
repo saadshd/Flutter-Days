@@ -67,7 +67,10 @@ class home extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const CounterPage()),
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    child: CounterPage(),
+                  ),
                 );
               },
               child: Text('Tasbeeh Counter'),
