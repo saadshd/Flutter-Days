@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:tasbeeh_counter/home.dart';
 import 'drawer.dart';
 import 'newtasbeeh.dart';
+import 'package:page_transition/page_transition.dart';
 
 class CounterPage extends StatefulWidget {
-  const CounterPage({Key? key}) : super(key: key);
 
-
+  final String ? TasbeehText, TasbeehCount;
+  const CounterPage({Key ? key,this.TasbeehText,this.TasbeehCount}) : super(key: key);
 
   @override
   State<CounterPage> createState() => _CounterPageState();
@@ -17,6 +19,12 @@ class _CounterPageState extends State<CounterPage> {
   void _incrementCounter() {
     setState(() {
       _counter++;
+    });
+  }
+
+  void _restartCounter() {
+    setState(() {
+      _counter=0;
     });
   }
 
@@ -59,10 +67,10 @@ class _CounterPageState extends State<CounterPage> {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Alhamdullilah\n",
+                      Text('${widget.TasbeehText}\n',
                         style: Theme.of(context).textTheme.subtitle1,
                       ),
-                      Text("Set 1",
+                      Text('Count ${widget.TasbeehCount}',
                         style: Theme.of(context).textTheme.subtitle2,
                       ),
                     ],
@@ -107,15 +115,13 @@ class _CounterPageState extends State<CounterPage> {
                                           shape: RoundedRectangleBorder(
                                               borderRadius: BorderRadius.circular(100)
                                           ),
-
-
                                       )
                                   ),
                                 ),
                                 SizedBox(
                                   width: 56,
                                   height: 56,
-                                  child: ElevatedButton(onPressed: _incrementCounter,
+                                  child: ElevatedButton(onPressed: _restartCounter,
                                       child: const Icon(Icons.refresh,
                                           size: 30),
                                       style: ElevatedButton.styleFrom(
@@ -147,7 +153,13 @@ class _CounterPageState extends State<CounterPage> {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.pop(context);
+                        Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.fade,
+                            child: home(),
+                          ),
+                        );
                       },
                       icon: Icon(
                         Icons.arrow_back_sharp,
@@ -168,7 +180,15 @@ class _CounterPageState extends State<CounterPage> {
                             borderRadius: BorderRadius.circular(10)
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.fade,
+                            child: home(),
+                          ),
+                        );
+                      },
                       icon: Icon(
                         Icons.file_download_outlined,
                         size: 24.0,

@@ -70,6 +70,7 @@ class viewall extends StatelessWidget {
                             ),
 
                             Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 IconButton(
                                   icon: Icon(
@@ -131,6 +132,7 @@ class viewall extends StatelessWidget {
                             ),
 
                             Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 IconButton(
                                   icon: Icon(
@@ -192,6 +194,7 @@ class viewall extends StatelessWidget {
                             ),
 
                             Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 IconButton(
                                   icon: Icon(
@@ -253,6 +256,7 @@ class viewall extends StatelessWidget {
                             ),
 
                             Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 IconButton(
                                   icon: Icon(

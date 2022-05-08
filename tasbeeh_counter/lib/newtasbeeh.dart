@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'counter.dart';
+import 'package:page_transition/page_transition.dart';
 
 class myalertbox extends StatefulWidget {
   @override
@@ -6,6 +8,9 @@ class myalertbox extends StatefulWidget {
 }
 
 class _myalertboxState extends State<myalertbox> {
+
+  TextEditingController TextController = TextEditingController();
+  TextEditingController CountingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +48,7 @@ class _myalertboxState extends State<myalertbox> {
                               Padding(
                                 padding: EdgeInsets.all(15.0),
                                 child: TextFormField(
+                                  controller: TextController,
                                   decoration: InputDecoration(
                                     hintText: 'Enter Tasbeeh Name',
                                   ),
@@ -51,6 +57,7 @@ class _myalertboxState extends State<myalertbox> {
                               Padding(
                                 padding: EdgeInsets.all(15.0),
                                 child: TextFormField(
+                                  controller: CountingController,
                                   decoration: InputDecoration(
                                     hintText: 'Enter Count Number',
                                   ),
@@ -83,7 +90,16 @@ class _myalertboxState extends State<myalertbox> {
                                     child: TextButton(
                                       child: Text('Save'),
                                       onPressed: () {
-
+                                        Navigator.push(
+                                          context,
+                                          PageTransition(
+                                            type: PageTransitionType.fade,
+                                            child: CounterPage(
+                                              TasbeehText: TextController.text,
+                                              TasbeehCount: CountingController.text,
+                                            ),
+                                          ),
+                                        );
                                       },
                                     ),
                                   ),
