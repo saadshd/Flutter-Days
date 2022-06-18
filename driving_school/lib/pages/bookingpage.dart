@@ -1,3 +1,4 @@
+import 'package:driving_school/pages/mybookingpage.dart';
 import 'package:driving_school/utils/constant.dart';
 import 'package:flutter/material.dart';
 
@@ -10,8 +11,13 @@ class bookingpage extends StatefulWidget {
 
 class _bookingpageState extends State<bookingpage> {
   final formkey = GlobalKey<FormState>();
-  TextEditingController fieldText = TextEditingController();
-  void cleartext() => fieldText.clear();
+  TextEditingController namecontroller = TextEditingController();
+  TextEditingController cniccontroller = TextEditingController();
+  TextEditingController dobcontroller = TextEditingController();
+  TextEditingController phonecontroller = TextEditingController();
+  TextEditingController addresscontroller = TextEditingController();
+  TextEditingController instructorcontroller = TextEditingController();
+  TextEditingController packagecontroller = TextEditingController();
 
   // final items = ['M. Saad Shahid','Talha Bin Tahir','Abdul Haseeb',];
   // late String _selectedValue;
@@ -50,7 +56,7 @@ class _bookingpageState extends State<bookingpage> {
                         ),
                         labelText: 'Name',
                     ),
-                    controller: fieldText,
+                    controller: namecontroller,
                     keyboardType: TextInputType.name,
                     validator: (value){
                       if(value!.isEmpty){
@@ -74,14 +80,14 @@ class _bookingpageState extends State<bookingpage> {
                       labelText: 'CNIC',
                       helperText: 'XXXXX-XXXXXXX-X',
                     ),
-                    controller: fieldText,
+                    controller: cniccontroller,
                     keyboardType: TextInputType.number,
                     validator: (value){
                       if(value!.isEmpty){
                         return 'Enter your CNIC';
                       }
                       else if(!RegExp(r'^[0-9]{5}[-][0-9]{7}[-][0-9]+$').hasMatch(value)){
-                        return 'Enter valid CNIC';
+                        return 'Enter valid CNIC: XXXXX-XXXXXXX-X';
                       }
                       else {
                         return null;
@@ -97,11 +103,11 @@ class _bookingpageState extends State<bookingpage> {
                       labelText: 'Date of Birth',
                       helperText: 'dd-MM-yyyy',
                     ),
-                    controller: fieldText,
+                    controller: dobcontroller,
                     keyboardType: TextInputType.number,
                     validator: (value){
                       if(value!.isEmpty){
-                        return 'Enter your date of birth';
+                        return 'Enter your date of birth: dd-MM-yyyy';
                       }
                       else {
                         return null;
@@ -118,14 +124,14 @@ class _bookingpageState extends State<bookingpage> {
                       labelText: 'Phone No.',
                         helperText: 'XXXX-XXXXXXX'
                     ),
-                    controller: fieldText,
+                    controller: phonecontroller,
                     keyboardType: TextInputType.number,
                     validator: (value){
                       if(value!.isEmpty){
-                        return 'Enter your phone number';
+                        return 'Enter your phone number: XXXX-XXXXXXX';
                       }
                       else if(!RegExp(r'^[0-9]{4}[-\s\./0-9]+$').hasMatch(value)){
-                        return 'Enter valid phone number';
+                        return 'Enter valid phone number: XXXX-XXXXXXX';
                       }
                       else {
                         return null;
@@ -140,7 +146,7 @@ class _bookingpageState extends State<bookingpage> {
                       ),
                       labelText: 'Address',
                     ),
-                    controller: fieldText,
+                    controller: addresscontroller,
                     keyboardType: TextInputType.streetAddress,
                     validator: (value){
                       if(value!.isEmpty){
@@ -161,7 +167,7 @@ class _bookingpageState extends State<bookingpage> {
                       labelText: 'Instructor',
 
                     ),
-                    controller: fieldText,
+                    controller: instructorcontroller,
                     keyboardType: TextInputType.name,
                     validator: (value){
                       if(value!.isEmpty){
@@ -179,15 +185,16 @@ class _bookingpageState extends State<bookingpage> {
                       border: UnderlineInputBorder(
                       ),
                       labelText: 'Package',
+                      hintText: '1-4'
                     ),
-                    controller: fieldText,
+                    controller: packagecontroller,
                     keyboardType: TextInputType.number,
                     validator: (value){
                       if(value!.isEmpty){
-                        return 'Enter a package';
+                        return 'Enter a package: 1-4';
                       }
                       else if(!RegExp(r'^[1-4]+$').hasMatch(value)){
-                        return 'Enter a valid package';
+                        return 'Enter a valid package: 1-4';
                       }
                       else {
                         return null;
@@ -235,10 +242,38 @@ class _bookingpageState extends State<bookingpage> {
                   ElevatedButton(
                       onPressed: () {
                         if(formkey.currentState!.validate()){
-                          final snackBar = SnackBar(content: Text('Class booked successfully.'));
+                          final snackBar = SnackBar(
+                            content: Text('Class booked successfully.'),
+                            behavior: SnackBarBehavior.floating,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)
+                            ),
+                            backgroundColor: Colors.indigo,
+                          );
                           _scaffoldKey.currentState!.showSnackBar(snackBar);
+                          namecontroller.clear();
+                          cniccontroller.clear();
+                          dobcontroller.clear();
+                          phonecontroller.clear();
+                          addresscontroller.clear();
+                          instructorcontroller.clear();
+                          packagecontroller.clear();
+
                               }
-                        cleartext();
+                       Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => mybookingdata(
+                            name: namecontroller.text,
+                            cnic: cniccontroller.text,
+                            dob: dobcontroller.text,
+                            phone: phonecontroller.text,
+                            address: addresscontroller.text,
+                            instrcutor: instructorcontroller.text,
+                            package: packagecontroller.text,
+                          )),
+                        );
+
+
                     },
                       child: Text('Book Class')
                   ),

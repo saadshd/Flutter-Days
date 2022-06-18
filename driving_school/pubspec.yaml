@@ -64,7 +64,10 @@ flutter:
   assets:
     - assets/images/cdslogo.png
     - assets/images/cdsw.png
+    - assets/images/corolla.png
+    - assets/images/vitz.png
     - assets/images/mypic.jpg
+    - assets/images/talhapic.jpeg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

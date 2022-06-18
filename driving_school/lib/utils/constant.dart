@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const kblue = Color(0xFFcedef0);
+
 //padding
 const kpd20 = EdgeInsets.symmetric(horizontal: 20);
 const kpd25 = EdgeInsets.symmetric(horizontal: 25);
@@ -13,7 +15,7 @@ const gaph10 = SizedBox(height: 10);
 
 //textstyles
 const klg = TextStyle(
-  fontSize: 24.0,
+  fontSize: 30.0,
   fontWeight: FontWeight.w900,
   color: Colors.indigo,
 );

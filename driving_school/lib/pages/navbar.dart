@@ -1,6 +1,7 @@
 import 'package:driving_school/pages/bookingpage.dart';
 import 'package:driving_school/pages/home.dart';
-import 'package:driving_school/pages/instructordata.dart';
+import 'package:driving_school/pages/instructorpage.dart';
+import 'package:driving_school/pages/mybookingpage.dart';
 import 'package:driving_school/pages/packagespage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -23,8 +24,8 @@ class _navbarState extends State<navbar> {
   final screens = [
     home(),
     packagespage(),
-    Center(child: Text('Downloads', style: klg)),
-
+    mybookingdata(),
+    Center(child: Text('More', style: klg)),
   ];
 
   @override
@@ -35,7 +36,7 @@ class _navbarState extends State<navbar> {
 
       bottomNavigationBar: NavigationBarTheme(
         data: NavigationBarThemeData(
-          indicatorColor: Colors.blue.shade100,
+          indicatorColor: kblue,
         ),
         child: NavigationBar(
           backgroundColor: Colors.grey.shade200,
@@ -58,9 +59,15 @@ class _navbarState extends State<navbar> {
             ),
             NavigationDestination(
               tooltip: "",
-              icon: Icon(Icons.download_outlined),
-              label: 'Downloads',
-              selectedIcon: Icon(Icons.download, color: Colors.black),
+              icon: Icon(Icons.calendar_month_outlined),
+              label: 'My Booking',
+              selectedIcon: Icon(Icons.calendar_month, color: Colors.black),
+            ),
+            NavigationDestination(
+              tooltip: "",
+              icon: Icon(Icons.more_horiz_outlined),
+              label: 'More',
+              selectedIcon: Icon(Icons.more_horiz, color: Colors.black),
             ),
           ],
         ),

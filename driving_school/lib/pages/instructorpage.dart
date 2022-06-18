@@ -53,7 +53,7 @@ class _instructordataState extends State<instructordata> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Car: Toyota Yaris'),
+                    Text('Car: Toyota Corolla'),
                     gaph10,
                     Text('Car Number: MN-22-1558'),
                     gaph10,
@@ -82,6 +82,100 @@ class _instructordataState extends State<instructordata> {
                   );
                 },
                 child: Text('Add Review'),
+            ),
+
+
+          ],
+        ),
+      ),
+
+
+    );
+  }
+}
+
+
+
+
+
+class talhadata extends StatefulWidget {
+  const talhadata({Key? key}) : super(key: key);
+
+  @override
+  State<talhadata> createState() => _talhadataState();
+}
+
+class _talhadataState extends State<talhadata> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Instructor"),
+        elevation: 0,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_ios_new),
+        ),
+      ),
+
+      body: Padding(
+        padding: const EdgeInsets.all(25),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                    CircleAvatar(
+                      radius: 50,
+                      backgroundImage: AssetImage('assets/images/talhapic.jpeg'),
+                    ),
+                    gaph10,
+                    Text('Talha Bin Tahir',
+                        style: kmd),
+                  ],
+                ),
+              ],
+            ),
+            gaph20,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Car: Toyota Vitz'),
+                    gaph10,
+                    Text('Car Number: LEH-22-7044'),
+                    gaph10,
+                    Text('Timing: 09:00 AM - 09:00 PM'),
+                  ],
+                ),
+              ],
+            ),
+            gaph20,
+
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const bookingpage()),
+                  );
+                },
+                child: Text('Book Class')
+            ),
+            gaph10,
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const reviewpage()),
+                );
+              },
+              child: Text('Add Review'),
             ),
 
 

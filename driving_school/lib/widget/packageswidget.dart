@@ -1,29 +1,31 @@
-import 'package:driving_school/utils/data.dart';
 import 'package:flutter/material.dart';
-import 'package:driving_school/utils/data.dart';
-import '../pages/instructorpage.dart';
+
 import '../utils/constant.dart';
 
-class instructorcontainer extends StatelessWidget {
+class packagecontainer extends StatelessWidget {
 
 
-  final String title;
-  final String subtitle;
+  final String package;
+  final String car;
+  final String price;
+  final String duration;
   final image;
   final VoidCallback onTap;
 
-  const instructorcontainer({
+  const packagecontainer({
     super.key,
-  required this.title,
-  required this.subtitle,
-  required this.image,
-  required this.onTap });
+    required this.package,
+    required this.car,
+    required this.duration,
+    required this.price,
+    required this.onTap,
+    required this.image,
+
+     });
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Padding(
-        padding: kpd20,
         child: InkWell(
           onTap: onTap,
           child: Container(
@@ -39,20 +41,26 @@ class instructorcontainer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(title, style: kmd),
-                      Text(subtitle, style: ksm),
+                      Text(package, style: kmd),
+                      Text(car, style: ksm),
+                      Text(duration, style: ksm),
+                      Text(price, style: ksm),
                     ],
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CircleAvatar(
-                        radius: 40,
-                        backgroundImage: image,
-
-                      ),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Container(
+                            width: 140,
+                            height:80,
+                            child: image,
+                          ),
+                          )
                     ],
                   ),
                 ],
@@ -60,8 +68,9 @@ class instructorcontainer extends StatelessWidget {
             ),
           ),
         ),
-      ),
+
     );
   }
 }
+
 
