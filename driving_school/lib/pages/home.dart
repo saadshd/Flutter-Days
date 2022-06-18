@@ -1,7 +1,11 @@
+import 'package:driving_school/pages/bookingpage.dart';
+import 'package:driving_school/pages/instructordata.dart';
 import 'package:flutter/material.dart';
-import 'package:driving_school/utlis/constant.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:driving_school/utils/constant.dart';
 import 'package:driving_school/widget/instructorwidget.dart';
-import 'package:driving_school/utlis/data.dart';
+import 'package:driving_school/utils/data.dart';
+import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
 class home extends StatefulWidget {
   const home({Key? key}) : super(key: key);
@@ -14,7 +18,6 @@ class home extends StatefulWidget {
 
 class _homeState extends State<home> {
 
-
   @override
   Widget build(BuildContext context) {
 
@@ -23,10 +26,10 @@ class _homeState extends State<home> {
           child: Column(
             children: [
             Container(
-              color: kblue,
+              color: Colors.indigo,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
                     SizedBox(
                         child: Padding(
                           padding: kpd20,
@@ -38,6 +41,17 @@ class _homeState extends State<home> {
                         )
                     ),
 
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const bookingpage()),
+                        );
+                      },
+                      child: Text('Book Class')
+                  ),
+
+
 
                 ],
               ),
@@ -46,102 +60,34 @@ class _homeState extends State<home> {
 
               const Text('Our Instructors',
               style: kmd),
-
               gaph20,
 
-              Padding(
-                padding: kpd20,
-                child: InkWell(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: kcream,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    height: 100,
-                    child: Padding(
-                      padding: kpd25,
-                      child: Row(
-                        children: [
-                          Column(
-                            children: [
-
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+              instructorcontainer(
+                  title: 'M. Saad Shahid',
+                  subtitle: 'Toyota Corolla',
+                  image: AssetImage('assets/images/mypic.jpg'),
               ),
-
               gaph20,
 
-              Padding(
-                padding: kpd20,
-                child: InkWell(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: kcream,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    height: 100,
-                    child: Padding(
-                      padding: kpd25,
-                      child: Row(
-                        children: [
-                          Column(
-                            children: [
-
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+              instructorcontainer(
+                title: 'Talha Bin Tahir',
+                subtitle: 'Toyota Vitz',
+                image: AssetImage('assets/images/mypic.jpg'),
               ),
-
-              gaph20,
-
-              Padding(
-                padding: kpd20,
-                child: InkWell(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: kcream,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    height: 100,
-                    child: Padding(
-                      padding: kpd25,
-                      child: Row(
-                        children: [
-                          Column(
-                            children: [
-
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-
-               
-
-              // ListView.builder(
-              //   itemCount: model.items.length,
-              //   itemBuilder: (context, index) {
-              //   return instructorwidget();
-              //},
-              //),
 
 
             ],
           ),
-
       ),
     );
   }
 }
+
+
+
+
+
+
+
+
+
