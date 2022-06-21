@@ -73,17 +73,39 @@ class _instructordataState extends State<instructordata> {
                 },
                 child: Text('Book Class')
             ),
-            gaph10,
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const reviewpage()),
-                  );
-                },
-                child: Text('Add Review'),
-            ),
 
+            gaph20,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Rating',style: kmd),
+                Row(
+                  children: [
+                    Icon(Icons.star, color: Colors.indigo,),
+                    Icon(Icons.star, color: Colors.indigo,),
+                    Icon(Icons.star, color: Colors.indigo,),
+                    Icon(Icons.star, color: Colors.indigo,),
+                    Icon(Icons.star_border, color: Colors.indigo,),
+                  ],
+                ),
+              ],
+            ),
+            
+            gaph20,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Reviews', style: kmd,),
+                    Text('Ali: Good instructor highly recommended.',),
+                    Text('Haseeb: Good instructor.',),
+                  ],
+                ),
+              ],
+            ),
+            gaph20,
 
           ],
         ),
@@ -168,15 +190,39 @@ class _talhadataState extends State<talhadata> {
                 child: Text('Book Class')
             ),
             gaph10,
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const reviewpage()),
-                );
-              },
-              child: Text('Add Review'),
+
+            gaph20,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Rating',style: kmd),
+                Row(
+                  children: [
+                    Icon(Icons.star, color: Colors.indigo,),
+                    Icon(Icons.star, color: Colors.indigo,),
+                    Icon(Icons.star, color: Colors.indigo,),
+                    Icon(Icons.star_border, color: Colors.indigo,),
+                    Icon(Icons.star_border, color: Colors.indigo,),
+                  ],
+                ),
+              ],
             ),
+
+            gaph20,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Reviews', style: kmd,),
+                    Text('Usman: Good instructor highly recommended.',),
+                    Text('Umar: Good instructor.',),
+                  ],
+                ),
+              ],
+            ),
+            gaph20,
 
 
           ],
