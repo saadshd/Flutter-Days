@@ -49,43 +49,33 @@ class _mybookingdataState extends State<mybookingdata> {
                     color: kblue,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  height: 300,
+                  height: 230,
                   child: Padding(
-                    padding: kpd25,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    padding: const EdgeInsets.all(20),
+                    child: Row(
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Instructor: M. Saad Shahid', style: kmd),
-                            Text('Package: 1', style: kmd),
-                            Text('Name: Shahid Mahmood', style: ksm),
-                            Text('Cnic: 3660347880473', style: ksm),
-                            Text('Date of Birth: 13-01-2002', style: ksm),
-                            Text('Phone No.: 03357735290', style: ksm),
-                            Text('Address: House no. H-1 Officers Colony, Vehari', style: ksm),
-
-                          ],
-                        ),
-
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          // crossAxisAlignment: ,
-                          children: [
-                            gaph10,
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => const reviewpage()),
-                                );
-                              },
-                              child: Text('Add Review'),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Instructor: M. Saad Shahid', style: kmd),
+                                Text('Package: 1', style: kmd),
+                                Text('Name: Shahid Mahmood', style: ksm),
+                                Text('Cnic: 3660347880473', style: ksm),
+                                Text('Date of Birth: 13-01-2002', style: ksm),
+                                Text('Phone No.: 03357735290', style: ksm),
+                                Text('Address: House no. H-1 Officers Colony, Vehari', style: ksm),
+                                gaph10,
+                                ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => const reviewpage()),
+                                    );
+                                  },
+                                  child: Text('Add Review'),
+                                ),
+                              ],
                             ),
-                            gaph10,
-                          ],
-                        )
                       ],
                     ),
                   ),

@@ -59,7 +59,7 @@ class _homeState extends State<home> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         height: 120,
-                        width: 350,
+                        width: 460,
                         child: Row(
 
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
