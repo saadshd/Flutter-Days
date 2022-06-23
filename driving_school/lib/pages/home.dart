@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:driving_school/utils/constant.dart';
 import 'package:driving_school/widget/instructorwidget.dart';
-import 'package:driving_school/utils/data.dart';
-import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
 class home extends StatefulWidget {
   const home({Key? key}) : super(key: key);
@@ -59,7 +57,7 @@ class _homeState extends State<home> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         height: 120,
-                        width: 460,
+                        width: 350,
                         child: Row(
 
                           mainAxisAlignment: MainAxisAlignment.spaceAround,

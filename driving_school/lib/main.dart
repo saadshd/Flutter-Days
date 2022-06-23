@@ -1,13 +1,12 @@
-import 'package:driving_school/pages/bookingpage.dart';
-import 'package:driving_school/pages/instructorpage.dart';
-import 'package:driving_school/pages/reviewpage.dart';
 import 'package:driving_school/pages/navbar.dart';
 import 'package:flutter/material.dart';
-import 'package:driving_school/pages/home.dart';
-import 'package:driving_school/utils/constant.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 

@@ -1,7 +1,5 @@
-import 'package:driving_school/pages/reviewpage.dart';
 import 'package:driving_school/utils/constant.dart';
 import 'package:flutter/material.dart';
-import 'package:driving_school/utils/constant.dart';
 import 'bookingpage.dart';
 
 class instructordata extends StatefulWidget {

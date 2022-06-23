@@ -1,5 +1,3 @@
-import 'package:driving_school/pages/instructorpage.dart';
-import 'package:driving_school/pages/mybookingpage.dart';
 import 'package:driving_school/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';

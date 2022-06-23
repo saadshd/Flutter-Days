@@ -1,14 +1,9 @@
-import 'package:driving_school/pages/bookingpage.dart';
 import 'package:driving_school/pages/home.dart';
-import 'package:driving_school/pages/instructorpage.dart';
 import 'package:driving_school/pages/mybookingpage.dart';
 import 'package:driving_school/pages/packagespage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
 import 'package:driving_school/utils/constant.dart';
-import 'package:driving_school/widget/instructorwidget.dart';
-import 'package:driving_school/utils/data.dart';
 
 class navbar extends StatefulWidget {
   const navbar({Key? key}) : super(key: key);

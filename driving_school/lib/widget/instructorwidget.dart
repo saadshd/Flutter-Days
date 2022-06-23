@@ -1,7 +1,4 @@
-import 'package:driving_school/utils/data.dart';
 import 'package:flutter/material.dart';
-import 'package:driving_school/utils/data.dart';
-import '../pages/instructorpage.dart';
 import '../utils/constant.dart';
 
 class instructorcontainer extends StatelessWidget {

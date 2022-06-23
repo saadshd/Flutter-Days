@@ -1,6 +1,7 @@
 import 'package:driving_school/utils/constant.dart';
 import 'package:flutter/material.dart';
-import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class bookingpage extends StatefulWidget {
   const bookingpage({Key? key}) : super(key: key);
@@ -11,31 +12,52 @@ class bookingpage extends StatefulWidget {
 
 class _bookingpageState extends State<bookingpage> {
   final formkey = GlobalKey<FormState>();
+
   TextEditingController namecontroller = TextEditingController();
   TextEditingController cniccontroller = TextEditingController();
   TextEditingController dobcontroller = TextEditingController();
   TextEditingController phonecontroller = TextEditingController();
   TextEditingController addresscontroller = TextEditingController();
-  // TextEditingController instructorcontroller = TextEditingController();
-  // TextEditingController packagecontroller = TextEditingController();
+  TextEditingController instructorcontroller = TextEditingController();
+  TextEditingController packagecontroller = TextEditingController();
+
+  var cnicFormatter = new MaskTextInputFormatter(
+      mask: '#####-#######-#',
+      filter: { "#": RegExp(r'[0-9]') },
+      type: MaskAutoCompletionType.lazy
+  );
+
+  var dobFormatter = new MaskTextInputFormatter(
+      mask: '##-##-####',
+      filter: { "#": RegExp(r'[0-9]') },
+      type: MaskAutoCompletionType.lazy
+  );
+
+  var phoneFormatter = new MaskTextInputFormatter(
+      mask: '####-#######',
+      filter: { "#": RegExp(r'[0-9]') },
+      type: MaskAutoCompletionType.lazy
+  );
 
 
-  final List<String> instructoritems = [
-    'M. Saad Shahid',
-    'Talha Bin Tahir',
-  ];
-
-  String? instructorvalue;
 
 
-  final List<String> packagetems = [
-    '1',
-    '2',
-    '3',
-    '4',
-  ];
+  // final List<String> instructoritems = [
+  //   'M. Saad Shahid',
+  //   'Talha Bin Tahir',
+  // ];
+  //
+  // String? instructorvalue;
+  //
+  //
+  // final List<String> packagetems = [
+  //   '1',
+  //   '2',
+  //   '3',
+  //   '4',
+  // ];
 
-  String? packagevalue;
+  // String? packagevalue;
 
 
 
@@ -93,14 +115,12 @@ class _bookingpageState extends State<bookingpage> {
                       labelText: 'CNIC',
                       helperText: 'XXXXX-XXXXXXX-X',
                     ),
+                    inputFormatters: [cnicFormatter],
                     controller: cniccontroller,
                     keyboardType: TextInputType.number,
                     validator: (value){
                       if(value!.isEmpty){
-                        return 'Enter your CNIC';
-                      }
-                      else if(!RegExp(r'^[0-9]{5}[-][0-9]{7}[-][0-9]+$').hasMatch(value)){
-                        return 'Enter valid CNIC: XXXXX-XXXXXXX-X';
+                        return 'Enter your CNIC: XXXXX-XXXXXXX-X';
                       }
                       else {
                         return null;
@@ -116,6 +136,7 @@ class _bookingpageState extends State<bookingpage> {
                       labelText: 'Date of Birth',
                       helperText: 'dd-MM-yyyy',
                     ),
+                    inputFormatters: [dobFormatter],
                     controller: dobcontroller,
                     keyboardType: TextInputType.number,
                     validator: (value){
@@ -137,14 +158,12 @@ class _bookingpageState extends State<bookingpage> {
                       labelText: 'Phone No.',
                         helperText: 'XXXX-XXXXXXX'
                     ),
+                    inputFormatters: [phoneFormatter],
                     controller: phonecontroller,
                     keyboardType: TextInputType.number,
                     validator: (value){
                       if(value!.isEmpty){
                         return 'Enter your phone number: XXXX-XXXXXXX';
-                      }
-                      else if(!RegExp(r'^[0-9]{4}[-\s\./0-9]+$').hasMatch(value)){
-                        return 'Enter valid phone number: XXXX-XXXXXXX';
                       }
                       else {
                         return null;
@@ -173,136 +192,136 @@ class _bookingpageState extends State<bookingpage> {
                   ),
                   gaph10,
 
-                  // TextFormField(
-                  //   decoration: InputDecoration(
-                  //     border: UnderlineInputBorder(
-                  //     ),
-                  //     labelText: 'Instructor',
-                  //
-                  //   ),
-                  //   controller: instructorcontroller,
-                  //   keyboardType: TextInputType.name,
-                  //   validator: (value){
-                  //     if(value!.isEmpty){
-                  //       return 'Enter an instructor';
-                  //     }
-                  //     else {
-                  //       return null;
-                  //     }
-                  //   },
-                  // ),
-                  // gaph10,
-                  //
-                  // TextFormField(
-                  //   decoration: InputDecoration(
-                  //     border: UnderlineInputBorder(
-                  //     ),
-                  //     labelText: 'Package',
-                  //     hintText: '1-4'
-                  //   ),
-                  //   controller: packagecontroller,
-                  //   keyboardType: TextInputType.number,
-                  //   validator: (value){
-                  //     if(value!.isEmpty){
-                  //       return 'Enter a package: 1-4';
-                  //     }
-                  //     else if(!RegExp(r'^[1-4]+$').hasMatch(value)){
-                  //       return 'Enter a valid package: 1-4';
-                  //     }
-                  //     else {
-                  //       return null;
-                  //     }
-                  //   },
-                  // ),
-                  // gaph10,
-
-                  DropdownButtonFormField2(
+                  TextFormField(
                     decoration: InputDecoration(
-                      isDense: true,
-                      contentPadding: EdgeInsets.zero,
                       border: UnderlineInputBorder(
                       ),
+                      labelText: 'Instructor',
+                      helperText: 'M. Saad Shahid, Talha Bin Tahir'
                     ),
-                    isExpanded: true,
-                    hint: const Text(
-                      'Select Your Instructor',
-                    ),
-                    icon: const Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.black45,
-                    ),
-                    iconSize: 30,
-                    buttonHeight: 60,
-                    buttonPadding: const EdgeInsets.only(left: 20, right: 10),
-                    dropdownDecoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    items: instructoritems
-                        .map((item) =>
-                        DropdownMenuItem<String>(
-                          value: item,
-                          child: Text(
-                            item,
-                          ),
-                        ))
-                        .toList(),
-                    validator: (value) {
-                      if (value == null) {
-                        return 'Please select instructor.';
+                    controller: instructorcontroller,
+                    keyboardType: TextInputType.name,
+                    validator: (value){
+                      if(value!.isEmpty){
+                        return 'Enter an instructor';
                       }
-                    },
-                    onChanged: (value) {
-
-                    },
-                    onSaved: (value) {
-                      instructorvalue = value.toString();
+                      else {
+                        return null;
+                      }
                     },
                   ),
                   gaph10,
 
-                  DropdownButtonFormField2(
+                  TextFormField(
                     decoration: InputDecoration(
-                      isDense: true,
-                      contentPadding: EdgeInsets.zero,
                       border: UnderlineInputBorder(
                       ),
+                      labelText: 'Package',
+                      helperText: '1-4'
                     ),
-                    isExpanded: true,
-                    hint: const Text(
-                      'Select Your Package',
-                    ),
-                    icon: const Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.black45,
-                    ),
-                    iconSize: 30,
-                    buttonHeight: 60,
-                    buttonPadding: const EdgeInsets.only(left: 20, right: 10),
-                    dropdownDecoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    items: packagetems
-                        .map((item) =>
-                        DropdownMenuItem<String>(
-                          value: item,
-                          child: Text(
-                            item,
-                          ),
-                        ))
-                        .toList(),
-                    validator: (value) {
-                      if (value == null) {
-                        return 'Please select package.';
+                    controller: packagecontroller,
+                    keyboardType: TextInputType.number,
+                    validator: (value){
+                      if(value!.isEmpty){
+                        return 'Enter a package: 1-4';
+                      }
+                      else if(!RegExp(r'^[1-4]+$').hasMatch(value)){
+                        return 'Enter a valid package: 1-4';
+                      }
+                      else {
+                        return null;
                       }
                     },
-                    onChanged: (value) {
-
-                    },
-                    onSaved: (value) {
-                      packagevalue = value.toString();
-                    },
                   ),
-                  gaph20,
+                  gaph10,
+
+                  // DropdownButtonFormField2(
+                  //   decoration: InputDecoration(
+                  //     isDense: true,
+                  //     contentPadding: EdgeInsets.zero,
+                  //     border: UnderlineInputBorder(
+                  //     ),
+                  //   ),
+                  //   isExpanded: true,
+                  //   hint: const Text(
+                  //     'Select Your Instructor',
+                  //   ),
+                  //   icon: const Icon(
+                  //     Icons.arrow_drop_down,
+                  //     color: Colors.black45,
+                  //   ),
+                  //   iconSize: 30,
+                  //   buttonHeight: 60,
+                  //   buttonPadding: const EdgeInsets.only(left: 20, right: 10),
+                  //   dropdownDecoration: BoxDecoration(
+                  //     borderRadius: BorderRadius.circular(15),
+                  //   ),
+                  //   items: instructoritems
+                  //       .map((item) =>
+                  //       DropdownMenuItem<String>(
+                  //         value: item,
+                  //         child: Text(
+                  //           item,
+                  //         ),
+                  //       ))
+                  //       .toList(),
+                  //   validator: (value) {
+                  //     if (value == null) {
+                  //       return 'Please select instructor.';
+                  //     }
+                  //   },
+                  //   onChanged: (value) {
+                  //
+                  //   },
+                  //   onSaved: (value) {
+                  //     instructorvalue = value.toString();
+                  //   },
+                  // ),
+                  // gaph10,
+
+                  // DropdownButtonFormField2(
+                  //   decoration: InputDecoration(
+                  //     isDense: true,
+                  //     contentPadding: EdgeInsets.zero,
+                  //     border: UnderlineInputBorder(
+                  //     ),
+                  //   ),
+                  //   isExpanded: true,
+                  //   hint: const Text(
+                  //     'Select Your Package',
+                  //   ),
+                  //   icon: const Icon(
+                  //     Icons.arrow_drop_down,
+                  //     color: Colors.black45,
+                  //   ),
+                  //   iconSize: 30,
+                  //   buttonHeight: 60,
+                  //   buttonPadding: const EdgeInsets.only(left: 20, right: 10),
+                  //   dropdownDecoration: BoxDecoration(
+                  //     borderRadius: BorderRadius.circular(15),
+                  //   ),
+                  //   items: packagetems
+                  //       .map((item) =>
+                  //       DropdownMenuItem<String>(
+                  //         value: item,
+                  //         child: Text(
+                  //           item,
+                  //         ),
+                  //       ))
+                  //       .toList(),
+                  //   validator: (value) {
+                  //     if (value == null) {
+                  //       return 'Please select package.';
+                  //     }
+                  //   },
+                  //   onChanged: (value) {
+                  //
+                  //   },
+                  //   onSaved: (value) {
+                  //     packagevalue = value.toString();
+                  //   },
+                  // ),
+                  // gaph20,
 
 
                   ElevatedButton(
@@ -317,11 +336,30 @@ class _bookingpageState extends State<bookingpage> {
                             backgroundColor: Colors.indigo,
                           );
                           _scaffoldKey.currentState!.showSnackBar(snackBar);
-                          namecontroller.clear();
-                          cniccontroller.clear();
-                          dobcontroller.clear();
-                          phonecontroller.clear();
-                          addresscontroller.clear();
+
+
+                          FirebaseFirestore.instance.collection("users").add({
+                            'name':'${namecontroller.text}',
+                            'cnic':'${cniccontroller.text}',
+                            'dob':'${dobcontroller.text}',
+                            'phone':'${phonecontroller.text}',
+                            'address':'${addresscontroller.text}',
+                            'instructor':'${instructorcontroller.text}',
+                            'package':'${packagecontroller.text}',
+                          }
+                          );
+
+                          Future.delayed(Duration(seconds: 2), (){
+                            Navigator.pop(context);
+                          });
+
+
+
+                          // namecontroller.clear();
+                          // cniccontroller.clear();
+                          // dobcontroller.clear();
+                          // phonecontroller.clear();
+                          // addresscontroller.clear();
                           // instructorcontroller.clear();
                           // packagecontroller.clear();
                               }
@@ -338,6 +376,10 @@ class _bookingpageState extends State<bookingpage> {
 
       ),
     );
+
+
   }
 }
+
+
 
