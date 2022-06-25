@@ -58,7 +58,10 @@ class _reviewpageState extends State<reviewpage> {
               gaph20,
               ElevatedButton(
                 onPressed: () {
-
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const reviewpage()),
+                  );
                 },
                 child: Text('Submit Review'),
               ),

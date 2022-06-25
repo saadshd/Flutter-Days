@@ -113,14 +113,13 @@ class _bookingpageState extends State<bookingpage> {
                       border: UnderlineInputBorder(
                       ),
                       labelText: 'CNIC',
-                      helperText: 'XXXXX-XXXXXXX-X',
                     ),
                     inputFormatters: [cnicFormatter],
                     controller: cniccontroller,
                     keyboardType: TextInputType.number,
                     validator: (value){
                       if(value!.isEmpty){
-                        return 'Enter your CNIC: XXXXX-XXXXXXX-X';
+                        return 'Enter your CNIC';
                       }
                       else {
                         return null;
@@ -134,14 +133,13 @@ class _bookingpageState extends State<bookingpage> {
                       border: UnderlineInputBorder(
                       ),
                       labelText: 'Date of Birth',
-                      helperText: 'dd-MM-yyyy',
                     ),
                     inputFormatters: [dobFormatter],
                     controller: dobcontroller,
                     keyboardType: TextInputType.number,
                     validator: (value){
                       if(value!.isEmpty){
-                        return 'Enter your date of birth: dd-MM-yyyy';
+                        return 'Enter your date of birth';
                       }
                       else {
                         return null;
@@ -156,14 +154,13 @@ class _bookingpageState extends State<bookingpage> {
                       border: UnderlineInputBorder(
                       ),
                       labelText: 'Phone No.',
-                        helperText: 'XXXX-XXXXXXX'
                     ),
                     inputFormatters: [phoneFormatter],
                     controller: phonecontroller,
                     keyboardType: TextInputType.number,
                     validator: (value){
                       if(value!.isEmpty){
-                        return 'Enter your phone number: XXXX-XXXXXXX';
+                        return 'Enter your phone number';
                       }
                       else {
                         return null;
@@ -203,7 +200,7 @@ class _bookingpageState extends State<bookingpage> {
                     keyboardType: TextInputType.name,
                     validator: (value){
                       if(value!.isEmpty){
-                        return 'Enter an instructor';
+                        return 'Enter an instructor: M. Saad Shahid, Talha Bin Tahir';
                       }
                       else {
                         return null;

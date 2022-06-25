@@ -33,16 +33,16 @@ class _homeState extends State<home> {
             Row(
               children: [
                 Stack(
+                  alignment: AlignmentDirectional.bottomCenter,
                   clipBehavior: Clip.none,
                   children: [
                   Container(
                     color: Colors.indigo,
-                    height: 70,
+                    height: 60,
                     width: MediaQuery.of(context).size.width,
                   ),
                     Positioned(
                       bottom: -60,
-                      left: 20,
                       child: Container(
                         decoration: BoxDecoration(
                           boxShadow: [
