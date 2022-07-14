@@ -48,7 +48,6 @@ class instructorcontainer extends StatelessWidget {
                       CircleAvatar(
                         radius: 40,
                         backgroundImage: image,
-
                       ),
                     ],
                   ),
