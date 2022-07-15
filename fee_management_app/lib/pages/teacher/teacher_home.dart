@@ -85,7 +85,7 @@ class _TeacherHomeState extends State<TeacherHome> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text('Mohsin ', style: kmd),
-                              Text('03357735290', style: ksm),
+                              Text('03333333333', style: ksm),
                               Text('Computer Science', style: ksm),
                               Text('mohsin@gmail.com', style: ksm),
                             ],

@@ -78,7 +78,7 @@ class _StudentHomeState extends State<StudentHome> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text('Khubaib', style: kmd),
-                              Text('03352735280', style: ksm),
+                              Text('03333333333', style: ksm),
                               Text('ICS (1st Year)', style: ksm),
                               Text('khubaib@gmail.com', style: ksm),
                             ],
