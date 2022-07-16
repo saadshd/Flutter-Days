@@ -1,3 +1,4 @@
+import 'package:fee_management_app/pages/student/student_notification.dart';
 import 'package:fee_management_app/pages/student/student_search.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,9 @@ class _StudentHomeState extends State<StudentHome> {
 
           IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const StudentNotification()));
             },
             icon: Icon(Icons.notifications_outlined, color: Colors.white,),
           ),

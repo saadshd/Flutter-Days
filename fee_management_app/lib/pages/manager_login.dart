@@ -74,6 +74,7 @@ class _ManagerLoginState extends State<ManagerLogin> {
               child: Form(
                 key: formkey,
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       gaph20,
                       TextFormField(
@@ -112,6 +113,7 @@ class _ManagerLoginState extends State<ManagerLogin> {
                       ),
 
                       gaph20,
+                      gaph20,
 
                       ElevatedButton(
                           onPressed: () {
@@ -119,6 +121,19 @@ class _ManagerLoginState extends State<ManagerLogin> {
                           child: Text('Login')
                       ),
                       gaph20,
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Not registered yet!', style: ksm,),
+                          TextButton(
+                              style: ButtonStyle(
+                                overlayColor: MaterialStateProperty.all(Colors.black12),
+                              ),
+                              onPressed: (){},
+                              child: Text('Register Now')),
+                        ],
+                      )
                     ]
                 ),
               ),

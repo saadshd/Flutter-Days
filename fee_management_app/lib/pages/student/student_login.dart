@@ -76,6 +76,7 @@ class _StudentLoginState extends State<StudentLogin> {
               child: Form(
                 key: _formKey,
                 child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       gaph20,
                       TextFormField(
@@ -113,6 +114,7 @@ class _StudentLoginState extends State<StudentLogin> {
                         ),
                       ),
 
+                      gaph20,
                       gaph20,
 
                       ElevatedButton(

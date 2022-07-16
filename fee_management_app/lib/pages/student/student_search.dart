@@ -14,7 +14,6 @@ class _StudentSearchState extends State<StudentSearch> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.indigo,
-          automaticallyImplyLeading: false,
           leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
@@ -34,9 +33,7 @@ class _StudentSearchState extends State<StudentSearch> {
                     prefixIcon: const Icon(Icons.search),
                     suffixIcon: IconButton(
                       icon: const Icon(Icons.clear),
-                      onPressed: () {
-                        /* Clear the search field */
-                      },
+                      onPressed: () { },
                     ),
                     hintText: 'Search Subject/Teacher',
                     border: InputBorder.none),

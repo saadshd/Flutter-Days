@@ -1,3 +1,4 @@
+import 'package:fee_management_app/pages/teacher/teacher_notification.dart';
 import 'package:fee_management_app/pages/teacher/teacher_search.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +40,9 @@ class _TeacherHomeState extends State<TeacherHome> {
 
           IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const TeacherNotification()));
             },
             icon: Icon(Icons.notifications_outlined, color: Colors.white,),
           ),
