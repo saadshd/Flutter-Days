@@ -1,3 +1,4 @@
+import 'package:fee_management_app/pages/manager/teacher_contactlist.dart';
 import 'package:flutter/material.dart';
 import '../../utils/constant.dart';
 import 'add_teacher.dart';
@@ -31,13 +32,7 @@ class _TeacherState extends State<Teacher> {
           style: TextStyle(color: Colors.white),),
         elevation: 0,
         backgroundColor: Colors.indigo,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-
-          icon: Icon(Icons.arrow_back_ios_new, color: Colors.white,),
-        ),
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
             onPressed: () {
@@ -55,7 +50,21 @@ class _TeacherState extends State<Teacher> {
                   context,
                   MaterialPageRoute(builder: (context) => const AddTeacher()));
             },
-            icon: Icon(Icons.add, color: Colors.white,),
+            icon: Icon(Icons.person_add_alt_1_sharp, color: Colors.white,),
+          ),
+
+
+          PopupMenuButton(
+            position: PopupMenuPosition.under,
+            icon: Icon(Icons.more_vert, color: Colors.white,),
+            color: Colors.grey.shade200,
+            itemBuilder: (context) => [
+              PopupMenuItem<int>(
+                value: 0,
+                child: Text("Contact List",style: TextStyle(color: Colors.indigo),),
+              ),
+            ],
+            onSelected: (item) => SelectedItem(context, item),
           ),
 
         ],
@@ -232,5 +241,16 @@ class _TeacherState extends State<Teacher> {
         ],
       ),
     );
+  }
+}
+
+
+void SelectedItem(BuildContext context, item) {
+  switch (item) {
+    case 0:
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => TeacherContactlist()));
+      break;
+
   }
 }

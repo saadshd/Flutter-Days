@@ -27,13 +27,7 @@ class _StudentState extends State<Student> {
           style: TextStyle(color: Colors.white),),
         elevation: 0,
         backgroundColor: Colors.indigo,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-
-          icon: Icon(Icons.arrow_back_ios_new, color: Colors.white,),
-        ),
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
             onPressed: () {
@@ -51,7 +45,21 @@ class _StudentState extends State<Student> {
                   context,
                   MaterialPageRoute(builder: (context) => const AddStudent()));
             },
-            icon: Icon(Icons.add, color: Colors.white,),
+            icon: Icon(Icons.person_add_alt_1_sharp, color: Colors.white,),
+          ),
+
+
+          PopupMenuButton(
+            position: PopupMenuPosition.under,
+            icon: Icon(Icons.more_vert, color: Colors.white,),
+            color: Colors.grey.shade200,
+            itemBuilder: (context) => [
+              PopupMenuItem<int>(
+                value: 0,
+                child: Text("Contact List",style: TextStyle(color: Colors.indigo),),
+              ),
+            ],
+            onSelected: (item) => SelectedItem(context, item),
           ),
 
         ],
@@ -234,3 +242,16 @@ class _StudentState extends State<Student> {
     );
   }
 }
+
+void SelectedItem(BuildContext context, item) {
+  switch (item) {
+    case 0:
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => AddStudent()));
+      break;
+
+  }
+}
+
+
+
