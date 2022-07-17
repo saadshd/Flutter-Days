@@ -1,6 +1,10 @@
+import 'package:fee_management_app/pages/manager/manager_report.dart';
+import 'package:fee_management_app/pages/manager/manager_signup.dart';
+import 'package:fee_management_app/pages/manager/student.dart';
+import 'package:fee_management_app/pages/manager/teacher.dart';
 import 'package:fee_management_app/pages/teacher/teacher_login.dart';
 import 'package:flutter/material.dart';
-import '../utils/constant.dart';
+import '../../utils/constant.dart';
 
 class ManagerLogin extends StatefulWidget {
   const ManagerLogin({Key? key}) : super(key: key);
@@ -112,11 +116,29 @@ class _ManagerLoginState extends State<ManagerLogin> {
                         ),
                       ),
 
-                      gaph20,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          TextButton(
+                              style: ButtonStyle(
+                                overlayColor: MaterialStateProperty.all(Colors.transparent),
+                              ),
+                              onPressed: (){
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const ManagerSignup()));
+                              },
+                              child: Text('Forgot Password?')),
+                        ],
+                      ),
+
                       gaph20,
 
                       ElevatedButton(
                           onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => const Teacher()));
                           },
                           child: Text('Login')
                       ),
@@ -128,9 +150,13 @@ class _ManagerLoginState extends State<ManagerLogin> {
                           Text('Not registered yet!', style: ksm,),
                           TextButton(
                               style: ButtonStyle(
-                                overlayColor: MaterialStateProperty.all(Colors.black12),
+                                overlayColor: MaterialStateProperty.all(Colors.transparent),
                               ),
-                              onPressed: (){},
+                              onPressed: (){
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const ManagerSignup()));
+                              },
                               child: Text('Register Now')),
                         ],
                       )

@@ -1,18 +1,18 @@
-import 'package:fee_management_app/pages/manager_login.dart';
+import 'package:fee_management_app/pages/manager/manager_login.dart';
 import 'package:fee_management_app/pages/student/student_login.dart';
 import 'package:fee_management_app/pages/teacher/teacher_login.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/constant.dart';
 
-class HomeLogin extends StatefulWidget {
-  const HomeLogin({Key? key}) : super(key: key);
+class Splashscreen extends StatefulWidget {
+  const Splashscreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeLogin> createState() => _HomeLoginState();
+  State<Splashscreen> createState() => _SplashscreenState();
 }
 
-class _HomeLoginState extends State<HomeLogin> {
+class _SplashscreenState extends State<Splashscreen> {
 
   @override
   Widget build(BuildContext context) {

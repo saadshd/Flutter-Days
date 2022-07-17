@@ -1,9 +1,4 @@
-import 'dart:async';
-import 'package:fee_management_app/pages/home_login.dart';
-import 'package:fee_management_app/pages/manager_login.dart';
-import 'package:fee_management_app/pages/student/student_home.dart';
-import 'package:fee_management_app/pages/teacher/teacher_home.dart';
-import 'package:fee_management_app/pages/teacher/teacher_login.dart';
+import 'package:fee_management_app/pages/splashscreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -31,7 +26,7 @@ class MyApp extends StatelessWidget {
           bodyText2: TextStyle(color: Colors.white),
         ),
       ),
-      home: HomeLogin(),
+      home: Splashscreen(),
     );
   }
 }
