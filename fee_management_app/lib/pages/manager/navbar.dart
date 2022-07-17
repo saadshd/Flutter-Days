@@ -1,5 +1,4 @@
 import 'package:fee_management_app/pages/manager/manager_home.dart';
-import 'package:fee_management_app/pages/manager/manager_report.dart';
 import 'package:fee_management_app/pages/manager/student.dart';
 import 'package:fee_management_app/pages/manager/teacher.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +21,6 @@ class _NavBarState extends State<NavBar> {
     ManagerHome(),
     Student(),
     Teacher(),
-    ManagerReport(),
     Center(child: Text('Profile', style: kmd)),
   ];
 
@@ -60,12 +58,6 @@ class _NavBarState extends State<NavBar> {
               icon: Icon(Icons.group_outlined),
               label: 'Teacher',
               selectedIcon: Icon(Icons.group, color: Colors.black),
-            ),
-            NavigationDestination(
-              tooltip: "",
-              icon: Icon(Icons.copy_outlined),
-              label: 'Reports',
-              selectedIcon: Icon(Icons.copy, color: Colors.black),
             ),
             NavigationDestination(
               tooltip: "",

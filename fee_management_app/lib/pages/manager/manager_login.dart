@@ -1,4 +1,3 @@
-import 'package:fee_management_app/pages/manager/manager_report.dart';
 import 'package:fee_management_app/pages/manager/manager_signup.dart';
 import 'package:fee_management_app/pages/manager/navbar.dart';
 import 'package:fee_management_app/pages/manager/student.dart';

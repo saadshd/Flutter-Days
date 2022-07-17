@@ -1,4 +1,5 @@
 import 'package:fee_management_app/pages/manager/add_student.dart';
+import 'package:fee_management_app/pages/manager/student_contactlist.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils/constant.dart';
@@ -31,9 +32,6 @@ class _StudentState extends State<Student> {
         actions: [
           IconButton(
             onPressed: () {
-            //   Navigator.push(
-            //       context,
-            //       MaterialPageRoute(builder: (context) => const StudentSearch()));
             },
 
             icon: Icon(Icons.search, color: Colors.white,),
@@ -247,7 +245,7 @@ void SelectedItem(BuildContext context, item) {
   switch (item) {
     case 0:
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => AddStudent()));
+          .push(MaterialPageRoute(builder: (context) => StudentContactlist()));
       break;
 
   }

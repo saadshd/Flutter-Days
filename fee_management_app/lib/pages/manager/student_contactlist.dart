@@ -2,14 +2,36 @@ import 'package:flutter/material.dart';
 
 import '../../utils/constant.dart';
 
-class TeacherContactlist extends StatefulWidget {
-  const TeacherContactlist({Key? key}) : super(key: key);
+class StudentContactlist extends StatefulWidget {
+  const StudentContactlist({Key? key}) : super(key: key);
 
   @override
-  State<TeacherContactlist> createState() => _TeacherContactlistState();
+  State<StudentContactlist> createState() => _StudentContactlistState();
 }
 
-class _TeacherContactlistState extends State<TeacherContactlist> {
+class _StudentContactlistState extends State<StudentContactlist> {
+
+  String dropdownvalue1 = 'Select Class';
+  var items1 = [
+    'Select Class',
+    'ICS (1st Year)',
+    'ICS (2nd Year)',
+  ];
+
+  String dropdownvalue2 = 'Select Subject';
+  var items2 = [
+    'Select Subject',
+    'Computer Science',
+    'Mathematics',
+    'Statistics',
+    'Urdu',
+    'Islamiat',
+    'English',
+    'Pakstudies',
+  ];
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +71,44 @@ class _TeacherContactlistState extends State<TeacherContactlist> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Teacher Name', style: kmd,),
+                  DropdownButton(
+                    value: dropdownvalue1,
+                    icon: const Icon(Icons.keyboard_arrow_down),
+                    items: items1.map((String items) {
+                      return DropdownMenuItem(
+                        value: items,
+                        child: Text(items),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownvalue1 = newValue!;
+                      });
+                    },
+                  ),
+
+                  DropdownButton(
+                    value: dropdownvalue2,
+                    icon: const Icon(Icons.keyboard_arrow_down),
+                    items: items2.map((String items) {
+                      return DropdownMenuItem(
+                        value: items,
+                        child: Text(items),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownvalue2 = newValue!;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              gaph20,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Student Name', style: kmd,),
                   Text('Contact Number', style: kmd,)
                 ],
               ),
@@ -58,7 +117,7 @@ class _TeacherContactlistState extends State<TeacherContactlist> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Mohsin', style: ksm,),
+                  Text('Khubiab', style: ksm,),
                   Text('03333333333', style: ksm,)
                 ],
               ),
@@ -67,7 +126,7 @@ class _TeacherContactlistState extends State<TeacherContactlist> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Waqar', style: ksm,),
+                  Text('Ali', style: ksm,),
                   Text('03333333333', style: ksm,)
                 ],
               ),
@@ -76,7 +135,7 @@ class _TeacherContactlistState extends State<TeacherContactlist> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Haseeb', style: ksm,),
+                  Text('Bilal', style: ksm,),
                   Text('03333333333', style: ksm,)
                 ],
               ),
@@ -86,7 +145,7 @@ class _TeacherContactlistState extends State<TeacherContactlist> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Umar', style: ksm,),
+                  Text('Usama', style: ksm,),
                   Text('03333333333', style: ksm,)
                 ],
               ),

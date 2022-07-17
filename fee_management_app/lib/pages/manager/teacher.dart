@@ -36,9 +36,6 @@ class _TeacherState extends State<Teacher> {
         actions: [
           IconButton(
             onPressed: () {
-            //   Navigator.push(
-            //       context,
-            //       MaterialPageRoute(builder: (context) => const StudentSearch()));
             },
 
             icon: Icon(Icons.search, color: Colors.white,),

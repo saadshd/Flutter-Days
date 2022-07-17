@@ -186,7 +186,6 @@ class _TeacherHomeState extends State<TeacherHome> {
                                 Text('Not Paid', style: ksm,)
                               ],
                             ),
-                            Divider(thickness: 1.5),
 
                           ],
                         ),
