@@ -19,6 +19,7 @@ class _ManagerSignupState extends State<ManagerSignup> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _phoneController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
+  TextEditingController _confirmpasswordController = TextEditingController();
 
 
   @override
@@ -154,7 +155,7 @@ class _ManagerSignupState extends State<ManagerSignup> {
 
                       gaph10,
                       TextFormField(
-                        controller: _passwordController,
+                        controller: _confirmpasswordController,
                         obscureText: _isObscure,
                         decoration: InputDecoration(
                           labelText: 'Confirm Password',
