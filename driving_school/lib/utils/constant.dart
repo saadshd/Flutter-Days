@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const kblue = Color(0xFFcedef0);
+const Color kblue = Color(0xFFcedef0);
 
 //padding
 const kpd20 = EdgeInsets.symmetric(horizontal: 20);
