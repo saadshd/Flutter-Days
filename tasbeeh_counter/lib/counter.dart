@@ -68,10 +68,10 @@ class _CounterPageState extends State<CounterPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('${widget.TasbeehText}\n',
-                        style: Theme.of(context).textTheme.subtitle1,
+                        style: Theme.of(context).textTheme.titleMedium,
                       ),
                       Text('Count ${widget.TasbeehCount}',
-                        style: Theme.of(context).textTheme.subtitle2,
+                        style: Theme.of(context).textTheme.titleSmall,
                       ),
                     ],
                   ),
@@ -92,11 +92,11 @@ class _CounterPageState extends State<CounterPage> {
                       Column(
                         children: [
                           Text('COUNTER',
-                          style: Theme.of(context).textTheme.bodyText2,
+                          style: Theme.of(context).textTheme.bodyMedium,
                           ),
                           Text(
                             '$_counter',
-                            style: Theme.of(context).textTheme.headline4,
+                            style: Theme.of(context).textTheme.headlineMedium,
                           ),
                           Padding(
                             padding: const EdgeInsets.fromLTRB(0,35,0,0),

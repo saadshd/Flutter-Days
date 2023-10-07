@@ -15,7 +15,6 @@ class _myalertboxState extends State<myalertbox> {
   @override
   Widget build(BuildContext context) {
                   return AlertDialog(
-
                     title: Container(
                       height: 50,
                       decoration: BoxDecoration(
