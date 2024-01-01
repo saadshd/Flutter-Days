@@ -2,9 +2,6 @@
 
 A new Flutter project.
 
-![CDS](https://user-images.githubusercontent.com/101456852/180084863-3fe71003-c263-4bea-a732-0344c4d510bf.png)
-
-
 ## Getting Started
 
 This project is a starting point for a Flutter application.
